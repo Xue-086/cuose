@@ -1,0 +1,12 @@
+title: "泛函分析 2026 秋季学期"
+description: "Functional Analysis, Fall 2026"
+
+# 你的 GitHub Pages 地址是 https://xue-086.github.io/cuose/
+# 所以这里必须是 /cuose。不要改成 /course/26FallFA。
+baseurl: "/cuose"
+url: "https://xue-086.github.io"
+
+markdown: kramdown
+exclude:
+  - README.md
+  - START-HERE.txt

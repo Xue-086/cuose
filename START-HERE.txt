@@ -1,0 +1,43 @@
+26FallFA / cuose 课程主页 —— 从这里开始
+
+【最重要】
+这个压缩包是专门按你的仓库：
+https://github.com/xue-086/cuose
+以及网站：
+https://xue-086.github.io/cuose/
+整理的。
+
+解压后，不要上传 zip，也不要再套一层 26FallFA 文件夹。
+把解压后看到的这些东西直接上传到 cuose 仓库根目录：
+
+_data/
+assets/
+files/
+_config.yml
+index.html
+preview.html
+README.md
+START-HERE.txt
+
+【以后 PDF 只放这四个地方】
+files/lecture-notes/   老师的课件、讲义
+files/homework/        作业题目
+files/solutions/       作业答案
+files/tutorials/       习题课材料
+
+不要自己创建 lectures、lecture、notes 等其他目录。
+网页代码不会去那些目录找文件。
+
+【例如：9 月 1 日第一节课有一个课件】
+1. 把 PDF 改名为 lecture01.pdf
+2. 上传到 files/lecture-notes/lecture01.pdf
+3. 打开 _data/schedule.yml
+4. 第一周改为：
+   topic_zh: "这里写第一节课内容"
+   topic_en: "English topic"
+   lecture_file: "lecture01.pdf"
+5. Commit changes
+6. Actions 变绿以后，刷新网站
+
+注意：lecture_file 只写 lecture01.pdf，
+绝对不要写 files/lecture-notes/lecture01.pdf。
