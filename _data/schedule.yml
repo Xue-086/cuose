@@ -1,34 +1,22 @@
-# ============================================================
-# 课程安排
-# ============================================================
-# 讲义 PDF 固定放在：files/lecture-notes/
-# 作业 PDF 固定放在：files/homework/
-#
-# lecture_file 填“文件名”即可，不要写 files/lecture-notes/
-# homework_id 填作业编号；没有就写 ""。
-#
-# 例：lecture_file: "lecture01.pdf"
-#     homework_id: 1
-
+# 课程安排。没有文件的项目直接留空 ""，网页会自动隐藏对应按钮。
 - week: 1
   dates: "09/01, 09/03"
-  topic_zh: "待更新"
-  topic_en: "To be announced"
-  lecture_file: "FA26lect01.pdf"
-  homework_id: ""
+  topic_zh: "课程介绍"
+  topic_en: "Course Introduction"
+  lecture: ""
+  homework: ""
 
 - week: 2
   dates: "09/08, 09/10"
   topic_zh: "待更新"
   topic_en: "To be announced"
-  lecture_file: ""
-  homework_id: ""
+  lecture: ""
+  homework: ""
 
-# 以后增加一周，复制下面这段：
-#
+# 示例：
 # - week: 3
 #   dates: "09/15, 09/17"
 #   topic_zh: "赋范线性空间与 Banach 空间"
 #   topic_en: "Normed Spaces and Banach Spaces"
-#   lecture_file: "lecture03.pdf"
-#   homework_id: 1
+#   lecture: "lecture03.pdf"
+#   homework: 1
