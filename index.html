@@ -7,21 +7,30 @@ layout: null
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.data.course.summary_zh }}">
+  <meta name="theme-color" content="#f4f1e8">
   <title>{{ site.data.course.title_zh }} · {{ site.data.course.semester_zh }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
   {% assign c = site.data.course %}
 
-  <header class="topbar" id="top">
-    <div class="topbar-inner">
-      <a class="brand" href="#top" aria-label="Back to top">
-        <span class="brand-mark">FA</span>
-        <span class="brand-school">
-          <span class="lang zh">{{ c.school_zh }}</span>
-          <span class="lang en">{{ c.school_en }}</span>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="identity" href="#top" aria-label="Back to top">
+        <span class="identity-mark">FA</span>
+        <span class="identity-text">
+          <strong><span class="lang zh">泛函分析</span><span class="lang en">Functional Analysis</span></strong>
+          <small>{{ c.code }} · {{ c.semester_en }}</small>
         </span>
       </a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#announcements"><span class="lang zh">公告</span><span class="lang en">News</span></a>
+        <a href="#info"><span class="lang zh">信息</span><span class="lang en">Info</span></a>
+        <a href="#schedule"><span class="lang zh">安排</span><span class="lang en">Schedule</span></a>
+        <a href="#homework"><span class="lang zh">作业</span><span class="lang en">Homework</span></a>
+        <a href="#tutorials"><span class="lang zh">习题课</span><span class="lang en">Tutorials</span></a>
+      </nav>
 
       <div class="lang-switch" aria-label="Language">
         <button type="button" data-lang-btn="zh" class="active">中文</button>
@@ -30,46 +39,92 @@ layout: null
     </div>
   </header>
 
-  <main>
+  <main class="page-shell">
     <section class="hero">
-      <p class="eyebrow">{{ c.code }}</p>
-      <h1>
-        <span class="lang zh">{{ c.title_zh }} <span>{{ c.semester_zh }}</span></span>
-        <span class="lang en">{{ c.title_en }} <span>{{ c.semester_en }}</span></span>
-      </h1>
-      <p class="hero-summary lang zh">{{ c.summary_zh }}</p>
-      <p class="hero-summary lang en">{{ c.summary_en }}</p>
+      <div class="hero-copy">
+        <div class="hero-kicker">
+          <span>{{ c.school_en }}</span>
+          <span class="dot"></span>
+          <span>{{ c.code }}</span>
+        </div>
+
+        <h1>
+          <span class="lang zh">{{ c.title_zh }}</span>
+          <span class="lang en">{{ c.title_en }}</span>
+        </h1>
+
+        <p class="semester">
+          <span class="lang zh">{{ c.semester_zh }}</span>
+          <span class="lang en">{{ c.semester_en }}</span>
+        </p>
+
+        <p class="hero-summary lang zh">{{ c.summary_zh }}</p>
+        <p class="hero-summary lang en">{{ c.summary_en }}</p>
+
+        <div class="hero-actions">
+          <a class="primary-link" href="#schedule">
+            <span class="lang zh">查看课程安排</span><span class="lang en">View schedule</span>
+            <span aria-hidden="true">↘</span>
+          </a>
+          <a class="text-link" href="#announcements">
+            <span class="lang zh">最新公告</span><span class="lang en">Latest news</span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="course-card" aria-label="Course overview">
+        <div class="card-label">
+          <span class="lang zh">课程速览</span><span class="lang en">At a glance</span>
+        </div>
+        <dl>
+          <div>
+            <dt><span class="lang zh">任课教师</span><span class="lang en">Instructor</span></dt>
+            <dd><span class="lang zh">{{ c.teacher_zh }}</span><span class="lang en">{{ c.teacher_en }}</span></dd>
+          </div>
+          <div>
+            <dt><span class="lang zh">上课时间</span><span class="lang en">Time</span></dt>
+            <dd><span class="lang zh">{{ c.class_time_zh }}</span><span class="lang en">{{ c.class_time_en }}</span></dd>
+          </div>
+          <div>
+            <dt><span class="lang zh">上课地点</span><span class="lang en">Room</span></dt>
+            <dd><span class="lang zh">{{ c.classroom_zh }}</span><span class="lang en">{{ c.classroom_en }}</span></dd>
+          </div>
+        </dl>
+        <div class="card-code">{{ c.code }}</div>
+      </aside>
     </section>
 
-    <nav class="section-nav" aria-label="Sections">
-      <a href="#announcements"><span class="lang zh">课程公告</span><span class="lang en">Announcements</span></a>
-      <a href="#info"><span class="lang zh">课程信息</span><span class="lang en">Course Info</span></a>
-      <a href="#schedule"><span class="lang zh">课程安排</span><span class="lang en">Schedule</span></a>
-      <a href="#homework"><span class="lang zh">课程作业</span><span class="lang en">Homework</span></a>
-      <a href="#tutorials"><span class="lang zh">习题课</span><span class="lang en">Tutorials</span></a>
-    </nav>
-
     <section id="announcements" class="content-section">
-      <div class="section-heading">
-        <p>01</p>
-        <h2><span class="lang zh">课程公告</span><span class="lang en">Announcements</span></h2>
+      <div class="section-title">
+        <span class="section-index">01</span>
+        <div>
+          <p class="section-overline">UPDATES</p>
+          <h2><span class="lang zh">课程公告</span><span class="lang en">Announcements</span></h2>
+        </div>
       </div>
+
       <div class="announcement-list">
         {% assign announcements = site.data.announcements | sort: "date" | reverse %}
         {% for item in announcements %}
         <article class="announcement">
           <time>{{ item.date }}</time>
-          <p class="lang zh">{{ item.zh }}</p>
-          <p class="lang en">{{ item.en }}</p>
+          <div class="announcement-copy">
+            <p class="lang zh">{{ item.zh }}</p>
+            <p class="lang en">{{ item.en }}</p>
+          </div>
+          <span class="announcement-arrow" aria-hidden="true">→</span>
         </article>
         {% endfor %}
       </div>
     </section>
 
     <section id="info" class="content-section">
-      <div class="section-heading">
-        <p>02</p>
-        <h2><span class="lang zh">课程信息</span><span class="lang en">Course Information</span></h2>
+      <div class="section-title">
+        <span class="section-index">02</span>
+        <div>
+          <p class="section-overline">COURSE</p>
+          <h2><span class="lang zh">课程信息</span><span class="lang en">Course Information</span></h2>
+        </div>
       </div>
 
       <dl class="info-grid">
@@ -89,22 +144,22 @@ layout: null
           <dt><span class="lang zh">上课地点</span><span class="lang en">Classroom</span></dt>
           <dd><span class="lang zh">{{ c.classroom_zh }}</span><span class="lang en">{{ c.classroom_en }}</span></dd>
         </div>
-        <div>
+        <div class="wide">
           <dt><span class="lang zh">教材</span><span class="lang en">Textbook</span></dt>
           <dd><span class="lang zh">{{ c.textbook_zh }}</span><span class="lang en">{{ c.textbook_en }}</span></dd>
         </div>
-        <div>
+        <div class="wide">
           <dt><span class="lang zh">参考书</span><span class="lang en">Reference</span></dt>
           <dd><span class="lang zh">{{ c.reference_zh }}</span><span class="lang en">{{ c.reference_en }}</span></dd>
         </div>
         {% if c.submission_zh or c.submission_en %}
-        <div>
+        <div class="wide">
           <dt><span class="lang zh">作业提交</span><span class="lang en">Submission</span></dt>
           <dd><span class="lang zh">{{ c.submission_zh }}</span><span class="lang en">{{ c.submission_en }}</span></dd>
         </div>
         {% endif %}
         {% if c.contact_zh or c.contact_en %}
-        <div>
+        <div class="wide">
           <dt><span class="lang zh">联系方式</span><span class="lang en">Contact</span></dt>
           <dd><span class="lang zh">{{ c.contact_zh }}</span><span class="lang en">{{ c.contact_en }}</span></dd>
         </div>
@@ -113,12 +168,16 @@ layout: null
     </section>
 
     <section id="schedule" class="content-section">
-      <div class="section-heading">
-        <p>03</p>
-        <h2><span class="lang zh">课程安排</span><span class="lang en">Schedule</span></h2>
+      <div class="section-title">
+        <span class="section-index">03</span>
+        <div>
+          <p class="section-overline">SEMESTER</p>
+          <h2><span class="lang zh">课程安排</span><span class="lang en">Schedule</span></h2>
+        </div>
       </div>
+
       <div class="table-wrap">
-        <table>
+        <table class="schedule-table">
           <thead>
             <tr>
               <th><span class="lang zh">周次</span><span class="lang en">Week</span></th>
@@ -130,24 +189,26 @@ layout: null
           <tbody>
             {% for row in site.data.schedule %}
             <tr>
-              <td>{{ row.week }}</td>
-              <td>{{ row.dates }}</td>
-              <td><span class="lang zh">{{ row.topic_zh }}</span><span class="lang en">{{ row.topic_en }}</span></td>
-              <td class="actions">
-                {% if row.lecture_file and row.lecture_file != "" %}
-                  <a class="file-link" href="{{ '/files/lecture-notes/' | append: row.lecture_file | relative_url }}">
-                    <span class="lang zh">讲义</span><span class="lang en">Lecture</span>
-                  </a>
-                {% endif %}
-                {% if row.homework_id and row.homework_id != "" %}
-                  {% assign hw = site.data.homework | where: "id", row.homework_id | first %}
-                  {% if hw %}
-                    <a class="file-link" href="{{ '/files/homework/' | append: hw.file | relative_url }}">
-                      <span class="lang zh">作业 {{ hw.id }}</span><span class="lang en">HW {{ hw.id }}</span>
+              <td><span class="week-pill">{{ row.week }}</span></td>
+              <td class="date-cell">{{ row.dates }}</td>
+              <td class="topic-cell"><span class="lang zh">{{ row.topic_zh }}</span><span class="lang en">{{ row.topic_en }}</span></td>
+              <td>
+                <div class="actions">
+                  {% if row.lecture and row.lecture != "" %}
+                    <a class="file-link" href="{{ '/files/lectures/' | append: row.lecture | relative_url }}">
+                      <span class="lang zh">讲义</span><span class="lang en">Lecture</span><span aria-hidden="true">↗</span>
                     </a>
                   {% endif %}
-                {% endif %}
-                {% if row.lecture_file == "" and row.homework_id == "" %}<span class="muted">—</span>{% endif %}
+                  {% if row.homework and row.homework != "" %}
+                    {% assign hw = site.data.homework | where: "id", row.homework | first %}
+                    {% if hw %}
+                      <a class="file-link" href="{{ '/files/homework/' | append: hw.file | relative_url }}">
+                        <span class="lang zh">作业 {{ hw.id }}</span><span class="lang en">HW {{ hw.id }}</span><span aria-hidden="true">↗</span>
+                      </a>
+                    {% endif %}
+                  {% endif %}
+                  {% if row.lecture == "" and row.homework == "" %}<span class="muted">—</span>{% endif %}
+                </div>
               </td>
             </tr>
             {% endfor %}
@@ -157,16 +218,20 @@ layout: null
     </section>
 
     <section id="homework" class="content-section">
-      <div class="section-heading">
-        <p>04</p>
-        <h2><span class="lang zh">课程作业</span><span class="lang en">Homework</span></h2>
+      <div class="section-title">
+        <span class="section-index">04</span>
+        <div>
+          <p class="section-overline">ASSIGNMENTS</p>
+          <h2><span class="lang zh">课程作业</span><span class="lang en">Homework</span></h2>
+        </div>
       </div>
 
       {% if site.data.homework and site.data.homework.size > 0 %}
-      <div class="card-list">
+      <div class="resource-list">
         {% for hw in site.data.homework %}
         <article class="resource-card">
-          <div>
+          <div class="resource-number">HW {{ hw.id }}</div>
+          <div class="resource-main">
             <h3><span class="lang zh">{{ hw.title_zh }}</span><span class="lang en">{{ hw.title_en }}</span></h3>
             {% if hw.note_zh != "" or hw.note_en != "" %}
             <p><span class="lang zh">{{ hw.note_zh }}</span><span class="lang en">{{ hw.note_en }}</span></p>
@@ -174,11 +239,11 @@ layout: null
           </div>
           <div class="actions">
             <a class="file-link" href="{{ '/files/homework/' | append: hw.file | relative_url }}">
-              <span class="lang zh">题目</span><span class="lang en">Problems</span>
+              <span class="lang zh">题目</span><span class="lang en">Problems</span><span aria-hidden="true">↗</span>
             </a>
             {% if hw.solution and hw.solution != "" %}
             <a class="file-link" href="{{ '/files/solutions/' | append: hw.solution | relative_url }}">
-              <span class="lang zh">答案</span><span class="lang en">Solution</span>
+              <span class="lang zh">答案</span><span class="lang en">Solution</span><span aria-hidden="true">↗</span>
             </a>
             {% endif %}
           </div>
@@ -186,39 +251,51 @@ layout: null
         {% endfor %}
       </div>
       {% else %}
-      <p class="empty-state"><span class="lang zh">暂无已发布作业。</span><span class="lang en">No homework has been posted yet.</span></p>
+      <div class="empty-state">
+        <span class="empty-mark">∅</span>
+        <p><span class="lang zh">暂无已发布作业。</span><span class="lang en">No homework has been posted yet.</span></p>
+      </div>
       {% endif %}
     </section>
 
     <section id="tutorials" class="content-section">
-      <div class="section-heading">
-        <p>05</p>
-        <h2><span class="lang zh">习题课</span><span class="lang en">Tutorials</span></h2>
+      <div class="section-title">
+        <span class="section-index">05</span>
+        <div>
+          <p class="section-overline">TUTORIALS</p>
+          <h2><span class="lang zh">习题课</span><span class="lang en">Tutorials</span></h2>
+        </div>
       </div>
 
       {% if site.data.tutorials and site.data.tutorials.size > 0 %}
-      <div class="card-list">
+      <div class="resource-list">
         {% for t in site.data.tutorials %}
         <article class="resource-card">
-          <div>
-            <p class="resource-date">{{ t.date }}</p>
+          <div class="resource-number">{{ t.date }}</div>
+          <div class="resource-main">
             <h3><span class="lang zh">{{ t.title_zh }}</span><span class="lang en">{{ t.title_en }}</span></h3>
           </div>
           {% if t.file and t.file != "" %}
-          <a class="file-link" href="{{ '/files/tutorials/' | append: t.file | relative_url }}">PDF</a>
+          <a class="file-link" href="{{ '/files/tutorials/' | append: t.file | relative_url }}">PDF <span aria-hidden="true">↗</span></a>
           {% endif %}
         </article>
         {% endfor %}
       </div>
       {% else %}
-      <p class="empty-state"><span class="lang zh">习题课材料发布后会显示在这里。</span><span class="lang en">Tutorial materials will appear here once posted.</span></p>
+      <div class="empty-state">
+        <span class="empty-mark">∅</span>
+        <p><span class="lang zh">习题课材料发布后会显示在这里。</span><span class="lang en">Tutorial materials will appear here once posted.</span></p>
+      </div>
       {% endif %}
     </section>
   </main>
 
-  <footer>
-    <p>FA · {{ c.code }} · {{ c.semester_en }}</p>
-    <a href="#top"><span class="lang zh">回到顶部 ↑</span><span class="lang en">Back to top ↑</span></a>
+  <footer class="site-footer">
+    <div>
+      <strong>FA</strong>
+      <span>{{ c.code }} · {{ c.semester_en }}</span>
+    </div>
+    <a href="#top"><span class="lang zh">回到顶部</span><span class="lang en">Back to top</span> ↑</a>
   </footer>
 
   <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
