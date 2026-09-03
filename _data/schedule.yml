@@ -1,9 +1,16 @@
 # 课程安排。没有文件的项目直接留空 ""，网页会自动隐藏对应按钮。
 - week: 1
-  dates: "09/01, 09/03"
-  topic_zh: "度量空间"
-  topic_en: "Metric Spaces"
+  dates: "09/01"
+  topic_zh: "度量空间定义与基本性质"
+  topic_en: "Definition and Properties of Metric Spaces"
   lecture: "FA26lect01.pdf"
+  homework: "见群"
+
+- week: 2 
+  dates: "09/03"
+  topic_zh: "度量诱导的拓扑与完备性"
+  topic_en: "Topology from Metric and Completeness"
+  lecture: "FA26lect02.pdf"
   homework: "见群"
 
 
