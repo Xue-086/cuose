@@ -13,6 +13,13 @@
   lecture: "FA26lect02.pdf"
   homework: "见群"
 
+- week: 3 
+  dates: "09/08"
+  topic_zh: "完备化定理的证明"
+  topic_en: "The Proof of Completeness Theorem"
+  lecture: "FA26lect03.pdf"
+  homework: "见群"
+
 
 # 示例：
 # - week: 3
