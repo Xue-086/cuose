@@ -20,6 +20,12 @@
   lecture: "FA26lect03.pdf"
   homework: "见群"
 
+- week: 4
+  dates: "09/10"
+  topic_zh: "度量空间中的紧性"
+  topic_en: "Compactness on metric spaces"
+  lecture: "FA26lect04.pdf"
+  homework: "见群"
 
 # 示例：
 # - week: 3
