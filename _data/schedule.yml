@@ -35,6 +35,13 @@
   lecture: "FA26lect05.pdf"
   homework: "见群"
 
+- week: 6
+  dates: "09/17"
+  topic_zh: "赋范线性空间与范数的强弱关系"
+  topic_en: "Normed Vector Spaces and Relationship between Norms"
+  lecture: "FA26lect06.pdf"
+  homework: "见群"
+
 # 示例：
 # - week: 3
 #   dates: "09/15, 09/17"
