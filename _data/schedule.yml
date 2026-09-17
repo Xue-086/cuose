@@ -23,8 +23,16 @@
 - week: 4
   dates: "09/10"
   topic_zh: "度量空间中的紧性"
-  topic_en: "Compactness on metric spaces"
+  topic_en: "Compactness on Metric Spaces"
   lecture: "FA26lect04.pdf"
+  homework: "见群"
+
+
+- week: 5
+  dates: "09/15"
+  topic_zh: "函数空间中的列紧性与Arzela-Ascoli定理"
+  topic_en: "The Sequence Compactness of C[0,1] and Arzela-Ascoli Theorem"
+  lecture: "FA26lect05.pdf"
   homework: "见群"
 
 # 示例：
