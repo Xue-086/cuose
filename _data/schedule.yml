@@ -42,6 +42,62 @@
   lecture: "FA26lect06.pdf"
   homework: "见群"
 
+- week: 7
+  dates: "09/22"
+  topic_zh: "有限维赋范子空间的两个定理"
+  topic_en: "Two Theorem of Finite-Dimensional Subspaces"
+  lecture: "FA26lect07.pdf"
+  homework: "见群"
+
+- week: 8
+  dates: "09/24"
+  topic_zh: "内积空间的定义及基本性质"
+  topic_en: "Definition and Fundamental Properties of Inner Product Space"
+  lecture: "FA26lect08.pdf"
+  homework: "见群"
+
+- week: 9
+  dates: "09/29"
+  topic_zh: "Hilbert空间中的正交基"
+  topic_en: "Orthogonal Basis in Hilber Space"
+  lecture: "FA26lect09.pdf"
+  homework: "见群"
+
+- week: 10
+  dates: "10/08"
+  topic_zh: "Bessel不等式及ONB的等价条件"
+  topic_en: "Bessel Inequality and Equivalent Conditions for ONB"
+  lecture: "FA26lect10.pdf"
+  homework: "见群"
+
+- week: 11
+  dates: "10/10"
+  topic_zh: "Hilbert空间结构定理及Fourier级数的收敛性"
+  topic_en: "Structure Theorem of Hilbert Space and L2 Convergence of Fourier Series"
+  lecture: "FA26lect11.pdf"
+  homework: "见群"
+
+- week: 12
+  dates: "10/13"
+  topic_zh: "有界线性算子的性质及表示"
+  topic_en: "Properties and Representation of Bounded Linear Functions"
+  lecture: "FA26lect12.pdf"
+  homework: "见群"
+
+- week: 13
+  dates: "10/15"
+  topic_zh: "Baire纲定理的证明与应用"
+  topic_en: "Proof and Applications of Baire's Category Theorem"
+  lecture: "FA26lect13.pdf"
+  homework: "见群"
+
+- week: 14
+  dates: "10/20"
+  topic_zh: "一致有界原理及其应用"
+  topic_en: "Uniform Boundedness Principle and its Applications"
+  lecture: "FA26lect14.pdf"
+  homework: "见群"
+
 # 示例：
 # - week: 3
 #   dates: "09/15, 09/17"
